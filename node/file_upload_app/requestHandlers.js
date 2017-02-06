@@ -66,15 +66,15 @@ function show(response) {
 }
 
 function dogocmd() {
-	exec('/usr/local/bin/go-crawler', (err, stdout, stderr) => {}
+	exec('/usr/local/bin/go-crawler', (err, stdout, stderr) => {
 			if (err) { console.log(err); }
 			console.log(stdout);
 			});
 
-exec('ls -la ./', (err, stdout, stderr) => {
-		if (err) { console.log(err); }
-		console.log(stdout);
-		});
+	exec('ls -la ./', (err, stdout, stderr) => {
+			if (err) { console.log(err); }
+			console.log(stdout);
+			});
 
 }
 

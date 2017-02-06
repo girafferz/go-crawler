@@ -97,29 +97,6 @@ func isExist(filename string) bool {
 	return err == nil
 }
 
-//unused
-func fetchPdf(id string) error {
-	dir := "/Users/hiroyukishirai/tmp/file"
-	if !isExist(dir) {
-		err := os.Mkdir(dir, os.FileMode(0755))
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
-	out, err := os.Create(dir + "/" + id + ".pdf")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer out.Close()
-	resp, err := http.Get("https://s3-ap-northeast-1.amazonaws.com/xmdio-public/medicine/pdf/" + id + ".pdf" )
-	defer resp.Body.Close()
-	_, err = io.Copy(out, resp.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return err
-}
-
 func evalStringToList (listString string) ([]string) {
 	var listOfString []string
 	dec := json.NewDecoder(strings.NewReader(listString))
