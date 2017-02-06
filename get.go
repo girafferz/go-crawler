@@ -26,7 +26,7 @@ func main() {
 }
 
 func readFromHtml() ([]byte){
-	data, err := ioutil.ReadFile(`./out.htm`)
+	data, err := ioutil.ReadFile(`/tmp/out.htm`)
 	if err != nil {
 		// エラー処理
 	}
